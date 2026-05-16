@@ -194,16 +194,27 @@ JSONEOF
 }
 
 generate_link() {
-	local UUID DOMAIN PUBLIC_IP
-	UUID=$(cat "$UUID_FILE" 2>/dev/null || echo "")
-	[ -z "$UUID" ] && { echo ""; return 1; }
-	DOMAIN="$PORT_DOMAIN"
-	if [ -n "$CUSTOM_IP" ]; then
-		PUBLIC_IP="$CUSTOM_IP"
-	else
-		PUBLIC_IP=$(curl -s --max-time 4 https://api.ipify.org 2>/dev/null || echo "94.130.50.12")
-	fi
-	echo "vless://${UUID}@${PUBLIC_IP}:${XRAY_PORT}?encryption=none&security=tls&sni=${DOMAIN}&fp=chrome&alpn=h2&insecure=1&allowInsecure=1&type=xhttp&host=${DOMAIN}&path=%2F&mode=packet-up#G2rayXCodeLeafy"
+    local UUID DOMAIN PUBLIC_IP USER_NAME
+
+    UUID=$(cat "$UUID_FILE" 2>/dev/null || echo "")
+    [ -z "$UUID" ] && { echo ""; return 1; }
+
+    DOMAIN="$PORT_DOMAIN"
+    if [ -n "${GITHUB_USER:-}" ]; then
+        USER_NAME="$GITHUB_USER"
+    elif command -v gh >/dev/null 2>&1; then
+        USER_NAME=$(gh api user --jq '.login' 2>/dev/null || echo "Unknown")
+    else
+        USER_NAME="Unknown"
+    fi
+
+    if [ -n "$CUSTOM_IP" ]; then
+        PUBLIC_IP="$CUSTOM_IP"
+    else
+        PUBLIC_IP=$(curl -s --max-time 4 https://api.ipify.org 2>/dev/null || echo "94.130.50.12")
+    fi
+
+    echo "vless://${UUID}@${PUBLIC_IP}:${XRAY_PORT}?encryption=none&security=tls&sni=${DOMAIN}&fp=chrome&alpn=h2&insecure=1&allowInsecure=1&type=xhttp&host=${DOMAIN}&path=%2F&mode=packet-up#G2rayXCodeLeafy%20%7C%20${USER_NAME}"
 }
 
 show_resource_stats() {
