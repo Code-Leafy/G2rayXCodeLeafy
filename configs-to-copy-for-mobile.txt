@@ -1,0 +1,1 @@
+vless://26b10825-8ac3-4713-9270-02c1129f39ed@94.130.50.12:443?encryption=none&security=tls&sni=turbo-space-couscous-qvg9rjjqjwxfvw-443.app.github.dev&fp=chrome&alpn=h2&insecure=1&allowInsecure=1&type=xhttp&host=turbo-space-couscous-qvg9rjjqjwxfvw-443.app.github.dev&path=%2F&mode=packet-up#G2rayXCodeLeafy
