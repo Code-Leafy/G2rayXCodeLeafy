@@ -804,7 +804,7 @@ while true; do
             echo -e "  ${GREEN}╚══════════════════════════════════════════════╝${NC}"
             echo -e "  ${WHITE}${_VLESS}${NC}\n"
 
-            if [[ "$_COUNTRY" != "DE" && "$_COUNTRY" != "Unknown" ]]; then
+            if [[ "$_COUNTRY" != "DE" && "$_COUNTRY" != "NL" && "$_COUNTRY" != "Unknown" ]]; then
                 echo -e "  ${RED}──────────────────────────────────────────────${NC}"
                 echo -e "  ${RED}⚠ WARNING: Codespace is NOT in Germany (${_COUNTRY})!${NC}"
                 echo -e "  ${WHITE}For optimal performance and compatibility, it must be in Germany.${NC}"
