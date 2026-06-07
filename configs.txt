@@ -1,0 +1,1 @@
+vless://9d2c4981-f174-4a99-8fa7-2ded1949026d@20.120.56.11:443?encryption=none&security=tls&sni=supreme-lamp-gxvwqpqrgw7295xw-443.app.github.dev&fp=chrome&alpn=h2,http/1.1&type=xhttp&host=supreme-lamp-gxvwqpqrgw7295xw-443.app.github.dev&path=%2F&mode=packet-up#%F0%9F%8D%83G2Leafy%20%7C%20rooos4500
