@@ -1,1 +1,0 @@
-vless://0c67b322-f34e-4e28-b1ba-293849ad769b@20.120.56.11:443?encryption=none&security=tls&sni=vigilant-succotash-pj5755vx777627jjr-443.app.github.dev&fp=chrome&alpn=h2,http/1.1&type=xhttp&host=vigilant-succotash-pj5755vx777627jjr-443.app.github.dev&path=%2F&mode=packet-up#%F0%9F%8D%83G2Leafy%20%7C%20SyntaxSugarRush
